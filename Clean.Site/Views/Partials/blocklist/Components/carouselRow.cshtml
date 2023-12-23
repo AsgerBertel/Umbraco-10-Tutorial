@@ -1,4 +1,4 @@
-@inherits UmbracoViewPage<BlockListItem>
+﻿@inherits UmbracoViewPage<BlockListItem>
 
 @{
     var row = (CarouselRow)Model.Content;
@@ -37,7 +37,7 @@
                 <div class="carousel-item @(isFirstSlide ? "active" : null)">
                     @if(rowItem.Image != null)
                     {
-                        <img src="@rowItem.Image.GetCropUrl(width: 900, height: 300)" class="d-block w-100" alt="@rowItem.Image.Name">
+                        <img src="@rowItem.Image.GetCropUrl(width: 900, height: 700)" class="d-block w-100" alt="@rowItem.Image.Name">
                     }
                     @if(hasTitle || hasDescription)
                     {
