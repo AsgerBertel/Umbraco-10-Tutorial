@@ -20,7 +20,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 {
 	/// <summary>Home Page</summary>
 	[PublishedModel("homePage")]
-	public partial class HomePage : PublishedContentModel, IFooterProperties, IHeaderProperties, ISiteNavigationProperties
+	public partial class HomePage : PublishedContentModel, IContentProperties, IFooterProperties, IHeaderProperties, ISiteNavigationProperties
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -56,6 +56,22 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("extraTitle")]
 		public virtual string ExtraTitle => this.Value<string>(_publishedValueFallback, "extraTitle");
+
+		///<summary>
+		/// Body Text: Enter the rich text for this page
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.1.0+3972538")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("bodyText")]
+		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString BodyText => global::Umbraco.Cms.Web.Common.PublishedModels.ContentProperties.GetBodyText(this, _publishedValueFallback);
+
+		///<summary>
+		/// Main Content: Enter the main content rows for this page
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.1.0+3972538")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("mainContent")]
+		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockListModel MainContent => global::Umbraco.Cms.Web.Common.PublishedModels.ContentProperties.GetMainContent(this, _publishedValueFallback);
 
 		///<summary>
 		/// Footer Social Links: Enter the social links to display in the footer

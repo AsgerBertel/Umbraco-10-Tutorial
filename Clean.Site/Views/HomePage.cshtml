@@ -5,4 +5,8 @@
 	Layout = "Master.cshtml";
 }
 
-@await Html.PartialAsync("~/Views/Partials/latestArticles.cshtml")
+<main class="mb-4">
+	<div class="container px-4 px-lg-5">
+		@Html.GetBlockListHtml(Model.MainContent)
+	</div>
+</main>
